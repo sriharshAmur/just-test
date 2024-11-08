@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { useMenuBasketStore } from "@/store/menuBasketStore";
 import { MenuItem } from "@/types";
 import { Plus } from "lucide-react";
 
@@ -7,6 +8,8 @@ type Props = {
 };
 
 const ItemCard = ({ item }: Props) => {
+  const { addItem } = useMenuBasketStore();
+
   return (
     <div className="relative flex cursor-pointer items-center rounded-lg border border-gray-300 px-4 py-4 hover:bg-gray-100">
       <div className="flex flex-1 flex-col gap-1.5">
@@ -22,13 +25,15 @@ const ItemCard = ({ item }: Props) => {
         )}
       </div>
 
-      {item.id % 2 === 0 ? (
-        <div className="relative h-24 w-24 rounded-md bg-gray-300">
-          <QuickAddIcon positionClasses="absolute -top-2 -right-2" />
-        </div>
-      ) : (
-        <QuickAddIcon positionClasses="absolute top-2 right-2" />
-      )}
+      <div onClick={() => addItem(item)}>
+        {item.id % 2 === 0 ? (
+          <div className="relative h-24 w-24 rounded-md bg-gray-300">
+            <QuickAddIcon positionClasses="absolute -top-2 -right-2" />
+          </div>
+        ) : (
+          <QuickAddIcon positionClasses="absolute top-2 right-2" />
+        )}
+      </div>
     </div>
   );
 };

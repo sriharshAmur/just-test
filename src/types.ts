@@ -15,3 +15,7 @@ export type MenuCategory = {
 export type MenuList = {
   categories: MenuCategory[];
 };
+
+export type BasketItem = MenuItem & {
+  quantity: number;
+};
