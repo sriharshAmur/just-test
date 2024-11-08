@@ -1,9 +1,7 @@
 import { useMenuBasketStore } from "@/store/menuBasketStore";
 import { Search as SearchIcon } from "lucide-react";
 
-type Props = {};
-
-const Search = (props: Props) => {
+const Search = () => {
   const searchTerm = useMenuBasketStore((state) => state.searchTerm);
   const { setSearchTerm } = useMenuBasketStore();
 

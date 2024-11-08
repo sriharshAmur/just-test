@@ -1,9 +1,6 @@
 import { Bike, Dot, Heart, Info, Star } from "lucide-react";
-import React from "react";
 
-type Props = {};
-
-const MenuHeader = (props: Props) => {
+const MenuHeader = () => {
   return (
     <div className="flex flex-col gap-4">
       {/* Restaurant Image */}

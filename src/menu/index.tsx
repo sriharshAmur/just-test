@@ -2,9 +2,7 @@ import MenuHeader from "./MenuHeader";
 import MenuList from "./MenuList";
 import Search from "./Search";
 
-type Props = {};
-
-const Menu = (props: Props) => {
+const Menu = () => {
   return (
     <div className="flex flex-1 flex-col gap-4 pb-8">
       <MenuHeader />
