@@ -1,50 +1,112 @@
-# React + TypeScript + Vite
+# Just Test: Workshop Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Just Test**, the hands-on workshop where you will learn to build and test a restaurant menu application! This workshop is designed to help you understand the fundamentals of automated testing using Cypress, while working on a fun project inspired by Just Eat Takeaway. In this guide, you'll find all the steps required to run the Vite project, along with information about the workshop, technologies used, and the authors.
 
-Currently, two official plugins are available:
+## Workshop Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Just Test** is a 3-hour workshop designed for Saxion computer science students to explore end-to-end testing in web applications. You'll learn how testing plays a crucial role in ensuring quality software and gain hands-on experience writing automated tests with Cypress.
 
-## Expanding the ESLint configuration
+The focus will be on building a simple restaurant menu application using React and then implementing end-to-end tests to ensure all features work correctly. We'll break down concepts and give you practical experience that will leave you confident about testing modern web applications.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- **React**: A JavaScript library for building user interfaces.
+- **Zustand**: Lightweight state management library to handle application state.
+- **Vite**: A fast development build tool to create the React project.
+- **Cypress**: A testing framework for writing end-to-end tests.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Prerequisites
+
+Before starting, make sure you have the following installed on your machine:
+
+- **Node.js** (v14 or higher)
+- **npm** or **yarn** (v6 or higher)
+
+## Getting Started
+
+Follow these steps to set up and run the Vite project on your local machine.
+
+### Step 1: Clone the Repository
+
+First, you'll need to either clone the repository to your local machine or download the zip file from GitHub.
+
+To clone the repository:
+
+```sh
+git clone https://github.com/your-username/just-test.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Or download the zip file and extract it.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Navigate to the project directory:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+cd just-test
 ```
+
+### Step 2: Install Dependencies
+
+Once you're in the project directory, install the required dependencies.
+
+Using npm:
+
+```sh
+npm install
+```
+
+### Step 3: Run the Development Server
+
+Start the development server to preview the application in your browser.
+
+Using npm:
+
+```sh
+npm run dev
+```
+
+This will start a development server, and you should see output indicating where to access the application, typically at `http://localhost:3000`.
+
+### Step 4: Running Cypress Tests
+
+In this workshop, we'll write end-to-end tests using Cypress. Follow these steps to open the Cypress testing environment:
+
+1. First, build the project:
+
+   ```sh
+   npm run build
+   ```
+
+2. Run Cypress:
+
+   ```sh
+   npx cypress open
+   ```
+
+   This will open the Cypress test runner, where you can select and run the provided tests or create new ones.
+
+## Workshop Exercises
+
+During the workshop, you'll:
+
+1. Learn the basics of automated testing, including why it's important.
+2. See a live demo of how features are implemented, how they can break, and how testing saves the day.
+3. Work alongside facilitators to build tests for the restaurant menu application.
+4. Write your own tests to solidify your understanding of end-to-end testing.
+
+By the end of this workshop, you'll have hands-on experience with state management, React components, and the Cypress testing framework.
+
+## Authors
+
+**Sriharsh Amur**
+
+- **GitHub**: [SriharshAmur](https://github.com/SriharshAmur)
+- **LinkedIn**: [Sriharsh Amur](https://linkedin.com/in/sriharsh-amur)
+
+**Jon Doe** (Testing Specialist)
+
+- **GitHub**: [JonDoeQA](https://github.com/JonDoeQA)
+- **LinkedIn**: [Jon Doe](https://linkedin.com/in/jon-doe)
+
+We hope you enjoy this workshop and gain practical skills that you can apply in future projects. Feel free to reach out if you have any questions or feedback!
+
+Happy Testing! 🚀
