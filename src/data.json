@@ -1,0 +1,208 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Appetizers",
+      "items": [
+        {
+          "id": 101,
+          "name": "Bruschetta",
+          "price": 6.5,
+          "ingredients": "Tomatoes, Basil, Olive Oil, Garlic",
+          "description": "Grilled bread topped with diced tomatoes, basil, and garlic."
+        },
+        {
+          "id": 102,
+          "name": "Stuffed Mushrooms",
+          "price": 8.0,
+          "ingredients": "Mushrooms, Cheese, Garlic, Breadcrumbs",
+          "description": "Mushroom caps stuffed with cheese and garlic, baked to perfection."
+        },
+        {
+          "id": 103,
+          "name": "Chicken Wings",
+          "price": 10.0,
+          "ingredients": "Chicken Wings, BBQ Sauce, Spices",
+          "description": "Crispy wings tossed in a sweet and spicy BBQ sauce."
+        },
+        {
+          "id": 104,
+          "name": "Garlic Bread",
+          "price": 4.0,
+          "ingredients": "Bread, Garlic, Butter, Parsley",
+          "description": "Classic garlic bread with a hint of parsley."
+        },
+        {
+          "id": 105,
+          "name": "Mozzarella Sticks",
+          "price": 7.0,
+          "ingredients": "Mozzarella, Breadcrumbs, Marinara Sauce",
+          "description": "Golden fried mozzarella sticks served with marinara sauce."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Salads",
+      "items": [
+        {
+          "id": 201,
+          "name": "Caesar Salad",
+          "price": 9.5,
+          "ingredients": "Romaine Lettuce, Parmesan, Caesar Dressing, Croutons",
+          "description": "Crisp romaine lettuce with Caesar dressing and parmesan."
+        },
+        {
+          "id": 202,
+          "name": "Greek Salad",
+          "price": 8.0,
+          "ingredients": "Tomatoes, Cucumber, Feta Cheese, Olives",
+          "description": "Fresh Greek salad with feta cheese and olives."
+        },
+        {
+          "id": 203,
+          "name": "Caprese Salad",
+          "price": 10.0,
+          "ingredients": "Tomatoes, Mozzarella, Basil, Olive Oil",
+          "description": "Sliced tomatoes and mozzarella drizzled with olive oil and basil."
+        },
+        {
+          "id": 204,
+          "name": "Garden Salad",
+          "price": 7.5,
+          "ingredients": "Lettuce, Carrots, Cucumbers, Tomatoes, Vinaigrette",
+          "description": "Fresh garden vegetables with a light vinaigrette."
+        },
+        {
+          "id": 205,
+          "name": "Cobb Salad",
+          "price": 11.0,
+          "ingredients": "Chicken, Bacon, Avocado, Blue Cheese, Eggs, Lettuce",
+          "description": "A hearty salad with chicken, bacon, avocado, and blue cheese."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Main Courses",
+      "items": [
+        {
+          "id": 301,
+          "name": "Spaghetti Bolognese",
+          "price": 13.0,
+          "ingredients": "Spaghetti, Beef, Tomato Sauce, Parmesan",
+          "description": "Classic Italian pasta with a rich beef bolognese sauce."
+        },
+        {
+          "id": 302,
+          "name": "Grilled Salmon",
+          "price": 17.5,
+          "ingredients": "Salmon, Lemon, Herbs, Olive Oil",
+          "description": "Grilled salmon fillet served with a side of vegetables."
+        },
+        {
+          "id": 303,
+          "name": "Chicken Alfredo",
+          "price": 14.5,
+          "ingredients": "Pasta, Chicken, Cream Sauce, Parmesan",
+          "description": "Creamy Alfredo pasta topped with grilled chicken."
+        },
+        {
+          "id": 304,
+          "name": "Steak Frites",
+          "price": 20.0,
+          "ingredients": "Steak, French Fries, Herb Butter",
+          "description": "Juicy steak served with French fries and herb butter."
+        },
+        {
+          "id": 305,
+          "name": "Veggie Stir-Fry",
+          "price": 11.0,
+          "ingredients": "Mixed Vegetables, Soy Sauce, Ginger, Rice",
+          "description": "Stir-fried vegetables served with steamed rice."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Desserts",
+      "items": [
+        {
+          "id": 401,
+          "name": "Chocolate Lava Cake",
+          "price": 6.5,
+          "ingredients": "Chocolate, Flour, Eggs, Sugar",
+          "description": "Warm chocolate cake with a molten chocolate center."
+        },
+        {
+          "id": 402,
+          "name": "Tiramisu",
+          "price": 7.0,
+          "ingredients": "Mascarpone, Coffee, Cocoa, Ladyfingers",
+          "description": "Classic Italian dessert with layers of coffee-soaked ladyfingers."
+        },
+        {
+          "id": 403,
+          "name": "Cheesecake",
+          "price": 6.0,
+          "ingredients": "Cream Cheese, Graham Cracker Crust, Sugar",
+          "description": "Smooth and creamy cheesecake with a graham cracker crust."
+        },
+        {
+          "id": 404,
+          "name": "Apple Pie",
+          "price": 5.5,
+          "ingredients": "Apples, Cinnamon, Pastry",
+          "description": "Traditional apple pie with a flaky crust."
+        },
+        {
+          "id": 405,
+          "name": "Ice Cream Sundae",
+          "price": 4.5,
+          "ingredients": "Ice Cream, Chocolate Syrup, Whipped Cream",
+          "description": "Vanilla ice cream with chocolate syrup and whipped cream."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Beverages",
+      "items": [
+        {
+          "id": 501,
+          "name": "Coffee",
+          "price": 2.5,
+          "ingredients": "Coffee Beans, Water",
+          "description": "Freshly brewed coffee."
+        },
+        {
+          "id": 502,
+          "name": "Tea",
+          "price": 2.0,
+          "ingredients": "Tea Leaves, Water",
+          "description": "A selection of hot teas."
+        },
+        {
+          "id": 503,
+          "name": "Soda",
+          "price": 2.5,
+          "description": "Choice of cola, lemon-lime, or orange soda."
+        },
+        {
+          "id": 504,
+          "name": "Lemonade",
+          "price": 3.0,
+          "ingredients": "Lemon, Water, Sugar",
+          "description": "Freshly squeezed lemonade."
+        },
+        {
+          "id": 505,
+          "name": "Smoothie",
+          "price": 5.0,
+          "ingredients": "Mixed Fruits, Yogurt, Honey",
+          "description": "A refreshing fruit smoothie."
+        }
+      ]
+    }
+  ]
+}

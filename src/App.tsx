@@ -1,5 +1,17 @@
+import Basket from "./basket";
+import Header from "./components/Header";
+import Menu from "./menu";
+
 function App() {
-  return <h1 className='text-3xl font-bold underline'>Hello world!</h1>;
+  return (
+    <div>
+      <Header />
+      <div className="flex">
+        <Menu />
+        <Basket />
+      </div>
+    </div>
+  );
 }
 
 export default App;
