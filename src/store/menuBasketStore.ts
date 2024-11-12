@@ -1,4 +1,4 @@
-import { BasketItem, MenuItem } from "@/types";
+import { AddBasketItem, BasketItem, MenuItem } from "@/types";
 import { create } from "zustand";
 
 type Fee = {
@@ -12,7 +12,7 @@ type MenuBasketState = {
   items: BasketItem[];
   fees: Fee[];
   getTotal: () => number;
-  addItem: (item: MenuItem) => void;
+  addItem: (item: AddBasketItem) => void;
   removeItem: (item: MenuItem) => void;
   setSearchTerm: (searchTerm: string) => void;
 };
@@ -47,7 +47,7 @@ export const useMenuBasketStore = create<MenuBasketState>((set, get) => ({
     return itemsTotal + feesTotal;
   },
   setSearchTerm: (searchTerm: string) => set({ searchTerm }),
-  addItem: (item: MenuItem) =>
+  addItem: (item: AddBasketItem) =>
     set((state) => {
       const existingItem = state.items.find((i) => i.id === item.id);
       if (existingItem) {
