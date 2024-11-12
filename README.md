@@ -97,15 +97,15 @@ By the end of this workshop, you'll have hands-on experience with state manageme
 
 ## Authors
 
-**Sriharsh Amur**
+**Sriharsh Amur** (Web Developer)
 
 - **GitHub**: [SriharshAmur](https://github.com/SriharshAmur)
 - **LinkedIn**: [Sriharsh Amur](https://linkedin.com/in/sriharsh-amur)
 
-**Jon Doe** (Testing Specialist)
+**Jonathan Machado** (Lead Quality Engineer)
 
-- **GitHub**: [JonDoeQA](https://github.com/JonDoeQA)
-- **LinkedIn**: [Jon Doe](https://linkedin.com/in/jon-doe)
+- **GitHub**: [jedicwb](https://github.com/jedicwb)
+- **LinkedIn**: [Jonathan Machado](https://www.linkedin.com/in/jonathan-d-machado)
 
 We hope you enjoy this workshop and gain practical skills that you can apply in future projects. Feel free to reach out if you have any questions or feedback!
 
