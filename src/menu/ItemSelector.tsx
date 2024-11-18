@@ -98,7 +98,7 @@ export default function ItemSelector({
     setSelectedOptions((prev) => {
       const groupOptions = prev.filter((o) => o.groupId === groupId);
       const exists = groupOptions.some((o) => o.optionId === Number(optionId));
-      const effectiveLimit = limit === undefined ? 1 : limit;
+      const effectiveLimit = limit ?? 1;
 
       if (exists) {
         return prev.filter(
@@ -109,12 +109,12 @@ export default function ItemSelector({
       if (effectiveLimit === 1 || effectiveLimit === null) {
         return [
           ...prev.filter((o) => o.groupId !== groupId),
-          { groupId, optionId },
+          { groupId, optionId: Number(optionId) }, // Convert optionId to number
         ];
       }
 
       if (groupOptions.length < effectiveLimit) {
-        return [...prev, { groupId, optionId }];
+        return [...prev, { groupId, optionId: Number(optionId) }]; // Convert optionId to number
       }
 
       return prev;
@@ -284,9 +284,9 @@ const OptionGroup = React.forwardRef<HTMLDivElement, OptionGroupProps>(
         </div>
         {isRadio ? (
           <RadioGroup
-            value={
-              selectedOptions.find((o) => o.groupId === group.id)?.optionId
-            }
+            value={(
+              selectedOptions.find((o) => o.groupId === group.id)?.optionId ?? 0
+            ).toString()}
             onValueChange={(value) =>
               handleOptionToggle(group.id, value, group.limit)
             }
@@ -300,9 +300,7 @@ const OptionGroup = React.forwardRef<HTMLDivElement, OptionGroupProps>(
                 ingredients={option.ingredients}
                 price={option.price}
                 isSelected={selectedOptions.some(
-                  (o) =>
-                    o.groupId === group.id &&
-                    o.optionId === option.id.toString(),
+                  (o) => o.groupId === group.id && o.optionId === option.id,
                 )}
                 onChange={() =>
                   handleOptionToggle(
@@ -330,9 +328,7 @@ const OptionGroup = React.forwardRef<HTMLDivElement, OptionGroupProps>(
                 ingredients={option.ingredients}
                 price={option.price}
                 isSelected={selectedOptions.some(
-                  (o) =>
-                    o.groupId === group.id &&
-                    o.optionId === option.id.toString(),
+                  (o) => o.groupId === group.id && o.optionId === option.id,
                 )}
                 onChange={() =>
                   handleOptionToggle(

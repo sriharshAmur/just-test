@@ -1,4 +1,10 @@
-import { AddBasketItem, BasketItem, MenuItem } from "@/types";
+import {
+  AddBasketItem,
+  BasketItem,
+  ComplexItem,
+  MenuItem,
+  SelectedOption,
+} from "@/types";
 import { create } from "zustand";
 
 type Fee = {
@@ -38,10 +44,25 @@ export const useMenuBasketStore = create<MenuBasketState>((set, get) => ({
 
     if (items.length === 0) return 0;
 
-    const itemsTotal = items.reduce(
-      (acc, item) => acc + item.price * item.quantity,
-      0,
-    );
+    const itemsTotal = items.reduce((acc, item) => {
+      const variationPrice = item.variation ? item.variation.price : 0;
+      const optionsTotal = (item.selectedOptions || []).reduce(
+        (optAcc, opt) => {
+          const group = (item as ComplexItem)?.optionGroups?.find(
+            (g) => g.id === opt.groupId,
+          );
+          const selectedOption = group?.options.find(
+            (o) => o.id === opt.optionId,
+          );
+          return optAcc + (selectedOption?.price || 0);
+        },
+        0,
+      );
+      const itemTotal =
+        (item.price + variationPrice + optionsTotal) * item.quantity;
+      return acc + itemTotal;
+    }, 0);
+
     const feesTotal = fees.reduce((acc, fee) => acc + fee.amount, 0);
 
     return itemsTotal + feesTotal;
@@ -49,11 +70,32 @@ export const useMenuBasketStore = create<MenuBasketState>((set, get) => ({
   setSearchTerm: (searchTerm: string) => set({ searchTerm }),
   addItem: (item: AddBasketItem) =>
     set((state) => {
-      const existingItem = state.items.find((i) => i.id === item.id);
-      if (existingItem) {
+      const existingItem = state.items.find(
+        (i) => i.id === item.id && i.variation?.id === item.variation?.id,
+      );
+      const hasSameOptions = (
+        aOptions: SelectedOption[] = [],
+        bOptions: SelectedOption[] = [],
+      ) =>
+        aOptions.length === bOptions.length &&
+        aOptions.every((aOpt) =>
+          bOptions.some(
+            (bOpt) =>
+              aOpt.groupId === bOpt.groupId && aOpt.optionId === bOpt.optionId,
+          ),
+        );
+
+      if (
+        existingItem &&
+        hasSameOptions(existingItem.selectedOptions, item.selectedOptions)
+      ) {
         return {
           items: state.items.map((i) =>
-            i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i,
+            i.id === item.id &&
+            i.variation?.id === item.variation?.id &&
+            hasSameOptions(i.selectedOptions, item.selectedOptions)
+              ? { ...i, quantity: i.quantity + 1 }
+              : i,
           ),
         };
       }

@@ -1,5 +1,5 @@
 import { useMenuBasketStore } from "@/store/menuBasketStore";
-import { BasketItem } from "@/types";
+import { BasketItem, ComplexItem } from "@/types";
 import { Minus, Plus, Trash } from "lucide-react";
 
 type Props = {
@@ -8,6 +8,28 @@ type Props = {
 
 const Item = ({ item }: Props) => {
   const { addItem, removeItem } = useMenuBasketStore();
+
+  // const getItemTotals = () => {
+  //   const variationPrice = item.variation?.price || 0;
+  //   const optionsTotal = (item.selectedOptions || []).reduce(
+  //     (acc, selectedOption) => {
+  //       const group = (item as ComplexItem)?.optionGroups?.find(
+  //         (g) => g.id === selectedOption.groupId,
+  //       );
+  //       const option = group?.options.find(
+  //         (o) => o.id === selectedOption.optionId,
+  //       );
+  //       return acc + (option?.price || 0);
+  //     },
+  //     0,
+  //   );
+  //   const itemUnitPrice = item.price + variationPrice + optionsTotal;
+  //   const itemTotal = itemUnitPrice * item.quantity;
+
+  //   return { itemUnitPrice, itemTotal };
+  // };
+
+  // const { itemTotal } = getItemTotals();
 
   return (
     <div
@@ -45,7 +67,7 @@ const Item = ({ item }: Props) => {
             </div>
           </div>
         )}
-        {item?.selectedOptions?.length > 0 && (
+        {item?.selectedOptions && item?.selectedOptions?.length > 0 && (
           <div
             className="mt-1 text-sm text-gray-700"
             data-qa="basket-item-options"
@@ -53,14 +75,14 @@ const Item = ({ item }: Props) => {
             <span className="font-semibold">Options:</span>
             <ul className="list-inside list-disc">
               {item.selectedOptions!.map((selectedOption) => {
-                const group = item.optionGroups.find(
+                const group = (item as ComplexItem)?.optionGroups?.find(
                   (g) => g.id === selectedOption.groupId,
                 );
                 const option = group?.options.find(
-                  (o) => o.id.toString() === selectedOption.optionId,
+                  (o) => o.id === selectedOption.optionId,
                 );
 
-                return option ? (
+                return group && option ? (
                   <li
                     key={`${group.id}-${option.id}`}
                     className="flex justify-between"

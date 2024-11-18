@@ -1,12 +1,16 @@
 import data from "@/data.json";
-import { useMenuBasketStore } from "@/store/menuBasketStore";
 import useFilteredCategories from "@/hooks/useFilteredCategories";
+import { useMenuBasketStore } from "@/store/menuBasketStore";
+import type { MenuList } from "@/types";
 import ItemCard from "./ItemCard";
 import NoItemsAvailable from "./NoItemsAvailable";
 
 const MenuList = () => {
   const searchTerm = useMenuBasketStore((state) => state.searchTerm);
-  const filteredCategories = useFilteredCategories(searchTerm, data);
+  const filteredCategories = useFilteredCategories(
+    searchTerm,
+    data as MenuList,
+  );
 
   if (filteredCategories.length === 0) {
     return <NoItemsAvailable />;

@@ -30,7 +30,7 @@ export type OptionGroup = {
   id: number;
   name: string;
   required: boolean;
-
+  limit?: number;
   options: OptionItem[];
 };
 
@@ -38,7 +38,6 @@ export type OptionItem = {
   id: number;
   name: string;
   price?: number;
-  limit?: number;
   ingredients?: string;
   description?: string;
 };
