@@ -125,16 +125,34 @@ export default function ItemSelector({
     <Dialog
       open={isOpen}
       onOpenChange={onClose}
+      data-qa="item-selector-dialog"
     >
-      <DialogContent className="select-none sm:max-w-[500px]">
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-bold">{item.name}</DialogTitle>
-          <DialogDescription className="text-base">
+      <DialogContent
+        className="select-none sm:max-w-[500px]"
+        data-qa="item-selector-dialog-content"
+      >
+        <DialogHeader data-qa="item-selector-dialog-header">
+          <DialogTitle
+            className="text-2xl font-bold"
+            data-qa="item-selector-title"
+          >
+            {item.name}
+          </DialogTitle>
+          <DialogDescription
+            className="text-base"
+            data-qa="item-selector-description"
+          >
             {item.description}
           </DialogDescription>
         </DialogHeader>
-        <ScrollArea className="max-h-[60vh] pr-4">
-          <div className="space-y-6">
+        <ScrollArea
+          className="max-h-[60vh] pr-4"
+          data-qa="item-selector-scroll-area"
+        >
+          <div
+            className="space-y-6"
+            data-qa="item-selector-content"
+          >
             {item.type === "complex" && (
               <>
                 {(item as ComplexItem).variations && (
@@ -144,6 +162,7 @@ export default function ItemSelector({
                     setSelectedVariation={setSelectedVariation}
                     hasError={hasError}
                     ref={variationsRef}
+                    data-qa="variation-group"
                   />
                 )}
                 {(item as ComplexItem).optionGroups &&
@@ -156,6 +175,7 @@ export default function ItemSelector({
                         handleOptionToggle={handleOptionToggle}
                         hasError={hasError}
                         ref={(el) => (optionGroupRefs.current[group.id] = el)}
+                        data-qa={`option-group-${group.id}`}
                       />
                     ),
                   )}
@@ -163,17 +183,22 @@ export default function ItemSelector({
             )}
           </div>
         </ScrollArea>
-        <Separator className="my-4" />
-        <DialogFooter>
+        <Separator
+          className="my-4"
+          data-qa="item-selector-separator"
+        />
+        <DialogFooter data-qa="item-selector-footer">
           <Button
             variant="outline"
             onClick={onClose}
+            data-qa="item-selector-cancel-button"
           >
             Cancel
           </Button>
           <Button
             onClick={handleAddToBasket}
             className="bg-primary hover:bg-primary/90"
+            data-qa="item-selector-add-button"
           >
             Add to Basket
           </Button>
