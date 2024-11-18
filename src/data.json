@@ -264,6 +264,13 @@
           "name": "Lemonade",
           "price": 2.5,
           "type": "simple"
+        },
+        {
+          "id": 504,
+          "name": "Beer",
+          "price": 2.0,
+          "type": "simple",
+          "restricted": true
         }
       ]
     },

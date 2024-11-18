@@ -60,6 +60,11 @@ const ItemCard = ({ item }: ItemCardProps) => {
               data-qa="item-name"
             >
               {item.name}
+              {item.restricted && (
+                <span className="mx-2 rounded bg-gray-200 p-1 text-sm font-semibold">
+                  18+
+                </span>
+              )}
             </h3>
             <p
               className="text-sm font-semibold"
@@ -85,7 +90,6 @@ const ItemCard = ({ item }: ItemCardProps) => {
             </p>
           )}
         </div>
-
         <div
           className="relative h-24 w-24 rounded-md bg-gray-300"
           data-qa="item-image"

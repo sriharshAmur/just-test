@@ -7,6 +7,7 @@ export type SimpleItem = {
   ingredients?: string;
   description?: string;
   type: "simple";
+  restricted?: boolean;
 };
 
 export type ComplexItem = {
@@ -16,6 +17,7 @@ export type ComplexItem = {
   ingredients?: string;
   description?: string;
   type: "complex";
+  restricted?: boolean;
   variations?: Variation[];
   optionGroups?: OptionGroup[];
 };

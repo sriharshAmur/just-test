@@ -137,6 +137,11 @@ export default function ItemSelector({
             data-qa="item-selector-title"
           >
             {item.name}
+            {item.restricted && (
+              <span className="mx-2 rounded bg-gray-200 p-1 text-sm font-semibold">
+                18+
+              </span>
+            )}
           </DialogTitle>
           <DialogDescription
             className="text-base"
