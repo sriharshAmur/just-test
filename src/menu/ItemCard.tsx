@@ -31,8 +31,11 @@ const ItemCard = ({ item }: ItemCardProps) => {
   };
 
   const handleItemClick = () => {
-    setIsAgeVerificationModalOpen(true);
-    // setIsModalOpen(true);
+    if (item.restricted) {
+      setIsAgeVerificationModalOpen(true);
+      return;
+    }
+    setIsModalOpen(true);
   };
 
   const handleAgeVerification = (isAbove18: boolean) => {
