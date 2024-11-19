@@ -9,7 +9,6 @@ function App() {
       <div className="flex">
         <Menu />
         <Basket />
-        <div>Footer</div>
       </div>
     </div>
   );
